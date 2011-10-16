@@ -1,1 +1,17 @@
-errr...
+Execute the following commands to install on your machine:
+cd ~
+git clone http://github.com/aletzo/vim-config.git ~/.vim
+ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/gvimrc ~/.gvimrc
+cd ~/.vim
+git submodule init
+git submodule update
+
+=================
+=================
+
+
+To update the plugins execute:
+git submodule foreach git pull origin master
+
+
