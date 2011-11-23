@@ -1,3 +1,4 @@
+"map Command + number to respective tab
 map <D-1> :tabn 1<CR>
 map <D-2> :tabn 2<CR>
 map <D-3> :tabn 3<CR>
@@ -8,6 +9,8 @@ map <D-7> :tabn 7<CR>
 map <D-8> :tabn 8<CR>
 map <D-9> :tabn 9<CR>
 
+
+"map Command + number to respective tab to use in INSERT mode
 map! <D-1> <C-O>:tabn 1<CR>
 map! <D-2> <C-O>:tabn 2<CR>
 map! <D-3> <C-O>:tabn 3<CR>
