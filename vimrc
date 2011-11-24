@@ -9,6 +9,9 @@ filetype plugin on              " use the file type plugins
 " PHP syntax checking  
 map <C-P> :!php -l %<CR>      
 
+" toggle the NERDTree
+map <F2> :NERDTreeToggle<CR>
+
 " source current file (e.g. to load new vimrc configuration)
 map <F5> :so %<CR> 
 
