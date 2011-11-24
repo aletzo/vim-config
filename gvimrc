@@ -28,3 +28,5 @@ map! <D-9> <C-O>:tabn 9<CR>
 " :tabnext gets bound to something else, which would be weird.
 noremap <c-tab> :tabnext<cr>
 
+set guifont=Monaco:h11
+

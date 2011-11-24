@@ -5,6 +5,12 @@ colorscheme desert
 
 filetype plugin on              " use the file type plugins
 
+" PHP syntax checking  
+map <C-P> :!php -l %<CR>      
+
+" source current file (e.g. to load new vimrc configuration)
+map <F5> :so %<CR> 
+
 set ai                          " Auto indenting
 set autoindent                  " set the cursor at same indent as line above
 set bs=2                        " backspacing over everything in insert mode
@@ -29,3 +35,9 @@ set tabstop=4
 set viminfo='20,\"200           " keep a .viminfo file
 
 syntax on                       " syntax highlighting
+
+
+
+
+
+
