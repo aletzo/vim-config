@@ -17,8 +17,11 @@ To add a new vim plugin as a git submodule execute:
 #make sure that the plugin is not installed
 git rm -r ~/.vim/bundle/[plugin_name]
 
+#important
+cd ~/.vim
+
 #add the plugin as a submodule
-git submodule add git://github.com/vim-scripts/[plugin_name].git ~/.vim/bundle/[plugin_name]
+git submodule add git://github.com/vim-scripts/[plugin_name].git bundle/[plugin_name]
 
 git submodule init
 
