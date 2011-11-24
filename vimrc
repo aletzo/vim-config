@@ -3,6 +3,7 @@ call pathogen#helptags()
 
 colorscheme desert
 
+filetype on                     " determines the type of the current file
 filetype plugin on              " use the file type plugins
 
 " PHP syntax checking  
@@ -11,7 +12,6 @@ map <C-P> :!php -l %<CR>
 " source current file (e.g. to load new vimrc configuration)
 map <F5> :so %<CR> 
 
-set ai                          " Auto indenting
 set autoindent                  " set the cursor at same indent as line above
 set bs=2                        " backspacing over everything in insert mode
 set copyindent                  " use existing indents for new indents

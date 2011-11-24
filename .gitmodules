@@ -13,3 +13,6 @@
 [submodule "bundle/comments"]
 	path = bundle/comments
 	url = git://github.com/vim-scripts/comments.vim.git
+[submodule "bundle/exuberant-ctags"]
+	path = bundle/exuberant-ctags
+	url = git://github.com/kokx/exuberant-ctags.git
