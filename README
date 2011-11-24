@@ -10,8 +10,20 @@ git submodule update
 =================
 =================
 
+git repository of all the vim plugins: https://github.com/vim-scripts
+
+To add a new vim plugin as a git submodule execute:
+
+#make sure that the plugin is not installed
+git rm -r ~/.vim/bundle/[plugin_name]
+
+#add the plugin as a submodule
+git submodule add git://github.com/vim-scripts/[plugin_name].git ~/.vim/bundle/[plugin_name]
+
+git submodule init
+
+=================
+=================
 
 To update the plugins execute:
 git submodule foreach git pull origin master
-
-
