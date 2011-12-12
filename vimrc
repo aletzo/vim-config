@@ -33,6 +33,7 @@ set autoindent                  " set the cursor at same indent as line above
 set autoread                    " watch for file changes
 set bs=2                        " backspacing over everything in insert mode
 set copyindent                  " use existing indents for new indents
+set encoding=utf-8
 set expandtab                   " expand <Tab>s with spaces; death to tabs!
 set foldmethod=marker           " Folding Stuff
 set hidden                      " Hide buffers when they are abandoned
