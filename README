@@ -30,3 +30,28 @@ git submodule init
 
 To update the plugins execute:
 git submodule foreach git pull origin master
+
+
+=================
+=================
+
+To install the exuberant ctags (required for the taglist and the tagbar plugins) in OS X:
+1. download the compressed file (or the latest version): http://sourceforge.net/projects/ctags/files/ctags/5.8/ctags-5.8.tar.gz/download
+2. tar xzvf ctags-5.8.tar.gz
+3. cd ctags-5.8
+4. ./configure
+5. make
+Normally you should execute a "make install", but 2 errors will spawn. Do the followings:
+6. Duplicate the directory ctags-5.8 to ctags
+7. sudo cp ctags /usr/local/bin/ctags
+8. sudo chmod -R 755 /usr/local/bin/ctags
+9. sudo cp /usr/local/bin/ctags/ctags.1 /usr/local/share/man/man1/ctags.1
+10. sudo chmod 644 /usr/local/share/man/man1/ctags.1
+11. make install (should work without errors)
+Now you have to override the ctags that comes with OS X
+12. put 'export PATH="/usr/local/bin/ctags:$PATH"' in your .bash_profile 
+13. restart the terminal
+14. which ctags should return "/usr/local/bin/ctags/ctags"
+
+
+
