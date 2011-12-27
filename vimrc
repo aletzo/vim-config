@@ -5,8 +5,11 @@ call pathogen#helptags()
 
 colorscheme desert
 
-" treat the *.php files also as html files
-au BufRead,BufNewFile *.php set ft=php.html
+
+
+" treat the *.php files also as html files (useful for snipMate but destroys taglist)
+"au BufRead,BufNewFile *.php set ft=php.html<CR>
+
 
 
 filetype on                     " determines the type of the current file
