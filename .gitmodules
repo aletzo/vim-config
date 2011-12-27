@@ -16,3 +16,9 @@
 [submodule "bundle/exuberant-ctags"]
 	path = bundle/exuberant-ctags
 	url = git://github.com/kokx/exuberant-ctags.git
+[submodule "bundle/ZoomWin"]
+	path = bundle/ZoomWin
+	url = git://github.com/vim-scripts/ZoomWin.git
+[submodule "bundle/snipMate"]
+	path = bundle/snipMate
+	url = git://github.com/vim-scripts/snipMate.git

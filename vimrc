@@ -5,6 +5,8 @@ call pathogen#helptags()
 
 colorscheme desert
 
+" treat the *.php files also as html files
+au BufRead,BufNewFile *.php set ft=php.html
 
 
 filetype on                     " determines the type of the current file
@@ -12,20 +14,28 @@ filetype plugin on              " use the file type plugins
 
 
 
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags/ctags' "tell taglist where to find ctags
+let Tlist_Show_One_File = 1                      " Only show tags for current buffer
+
+
+
 " PHP syntax checking  
-map <C-P> ;!php -l %<CR>      
+map <C-P> :!php -l %<CR>      
 
 " toggle the NERDTree
-map <F2> ;NERDTreeToggle<CR>
+map <F2> :NERDTreeToggle<CR>
+
+" toggle the taglist
+map <F3> :TlistToggle<CR>
 
 " source current file (e.g. to load new vimrc configuration)
-map <F5> ;so %<CR> 
+map <F5> :so %<CR> 
 
 
 
-" Swap ; and :  Convenient.
-nnoremap ; :
-nnoremap : ;
+" Swap ; and :  Convenient -- NOT :(
+"nnoremap ; :
+"nnoremap : ;
 
 
 
@@ -59,3 +69,5 @@ set viminfo='20,\"200           " keep a .viminfo file
 
 syntax on                       " syntax highlighting
 
+" which tags files to load
+set tags=./tags,~/.vim/tags/symfony-tags,~/.vim/tags/yii-tags
