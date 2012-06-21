@@ -17,7 +17,7 @@ filetype plugin on              " use the file type plugins
 
 
 
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags/ctags' "tell taglist where to find ctags
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags' "tell taglist where to find ctags
 let Tlist_Show_One_File = 1                      " Only show tags for current buffer
 
 
@@ -74,4 +74,4 @@ set viminfo='20,\"200           " keep a .viminfo file
 syntax on                       " syntax highlighting
 
 " which tags files to load
-set tags=./tags,~/.vim/tags/symfony-tags,~/.vim/tags/yii-tags
+set tags=/var/tags
