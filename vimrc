@@ -69,6 +69,7 @@ set shiftround                  " always round indents to multiple of shiftwidth
 set shiftwidth=4
 set showcmd                     " This shows what you are typing as a command
 set showmatch                   " show matching bracket
+set smartcase                   " if the search terms have at least one uppercase letter, the search will become case-sensitive
 set smarttab
 set softtabstop=4
 set tabstop=4
