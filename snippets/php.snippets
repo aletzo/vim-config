@@ -1,0 +1,57 @@
+# DebugHelper::log()
+snippet de
+	DebugHelper::log(${1});${2}
+# echo shorter
+snippet e
+	echo $${1};
+# endforeach
+snippet endf
+	endforeach ?>
+# endif
+snippet endi
+	endif ?>
+# explode
+snippet exp
+	explode( ${1:'|'}, ${2:$array} );
+# foreach shorter
+snippet fore
+	foreach ( $${1:results} as $${2:result} ) {
+		${3:// code...}
+	}
+# foreach with key
+snippet forek
+	foreach ( $${1:results} as $${2:key} => $${3:value} ) {
+		${4}
+	}
+# getInstance
+snippet geti
+	getInstance( )${1:->}
+# html_entity_decode
+snippet html html_entity_decode      : &quot; => "
+	html_entity_decode( ${1:$string} );
+# htmlentities
+snippet html htmlentities            : < => &lt
+	htmlentities( ${1:$string} );
+# htmlspecialchars_decode
+snippet html htmlspecialchars_decode : &gt; => >
+	htmlspecialchars_decode( ${1:$string} );
+# htmlspecialchars
+snippet html htmlspecialchars        : ' => &#039;
+	htmlspecialchars( ${1:$string} );
+# implode
+snippet imp
+	implode( ${1:'|'}, ${2:$array} );
+# php tag
+snippet p
+	<?php ${1}
+# php tag with echo
+snippet pe
+	<?php echo $${1};${2} ?>
+# pre
+snippet pre
+	echo '<pre>';
+	print_r(${1});
+	echo '</pre>';${2}
+# vd
+snippet vd
+	var_dump(${1});${2}
