@@ -4,6 +4,8 @@ call pathogen#helptags()
 
 
 colorscheme desert
+"colorscheme solarized
+
 
 
 
@@ -44,6 +46,7 @@ map <F5> :so %<CR>
 
 set autoindent                  " set the cursor at same indent as line above
 set autoread                    " watch for file changes
+set background=dark
 set bs=2                        " backspacing over everything in insert mode
 set copyindent                  " use existing indents for new indents
 set dir=~/tmp                   " use this directory to save the swp files
