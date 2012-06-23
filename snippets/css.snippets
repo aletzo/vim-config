@@ -1,0 +1,24 @@
+# background
+snippet back
+	background: ${1}
+# border
+snippet bor
+	border: ${1:1}px ${2:solid} ${3:#000};${4}
+# border-radius
+snippet borr
+	-webkit-border-radius: ${1:12}px;
+	border-radius: ${2:12}px;
+	/* useful if you don't want a bg color from leaking outside the border */
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;${3}
+# font-style
+snippet fs
+	font-style: ${1:italic};${2}
+# font-weight
+snippet fw
+	font-weight: ${1:bold};${2}
+# text-shadow
+snippet ts
+	text-shadow: ${1:1}px ${2:1}px ${3:3}px #${4:888};${5}
+
