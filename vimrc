@@ -3,15 +3,15 @@ call pathogen#helptags()
 
 
 
-colorscheme desert
-"colorscheme solarized
+"colorscheme desert
+colorscheme solarized
 
 
 
 
 " treat the *.php files also as html files (useful for snipMate but destroys taglist)
-"au BufRead,BufNewFile *.php set ft=php.html<CR>
-
+"au BufRead *.php set ft=php.html
+"au BufNewFile *.php set ft=php.html
 
 
 filetype on                     " determines the type of the current file
@@ -33,8 +33,28 @@ map <F2> :NERDTreeToggle<CR>
 " toggle the taglist
 map <F3> :TlistToggle<CR>
 
+" activate html snippets in php files
+map <F7> :set ft=php.html<CR>:highlight Normal guibg=Black<CR>
+
+" deactivate html snippets in php files
+map <F8> :set ft=php<CR>:set background=dark<CR>
+
+
 " source current file (e.g. to load new vimrc configuration)
 map <F5> :so %<CR> 
+
+
+" disable the arrow keys
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+
+
 
 
 
@@ -43,11 +63,23 @@ map <F5> :so %<CR>
 "nnoremap : ;
 
 
+" disable the F1 help screen
+nmap <F1> <nop>
+
 
 set autoindent                  " set the cursor at same indent as line above
 set autoread                    " watch for file changes
 set background=dark
 set bs=2                        " backspacing over everything in insert mode
+
+" Change the 'completeopt' option so that Vim's popup menu doesn't select the
+" first completion item, but rather just inserts the longest common text of
+" all matches; and the menu will come up even if there's only one match. (The
+" longest setting is responsible for the former effect and the menuone is
+" responsible for the latter.)
+" NOT WORKING (why ???)
+"set completeopt=longest,menuone
+
 set copyindent                  " use existing indents for new indents
 set dir=~/tmp                   " use this directory to save the swp files
 set encoding=utf-8

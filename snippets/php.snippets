@@ -3,7 +3,7 @@ snippet de
 	DebugHelper::log(${1});${2}
 # echo shorter
 snippet e
-	echo ${1:$var};${2}
+	echo $${1};
 # endforeach
 snippet endf
 	endforeach ?>${1}
@@ -52,42 +52,9 @@ snippet pre
 	echo '<pre>';
 	print_r(${1});
 	echo '</pre>';${2}
-# str_pad
-snippet str  str_pad( $input, 10, '-=', STR_PAD_LEFT ) // produces '-=-=-Alien'
-	str_pad( ${1:$string}, ${2:10}, '${3: }', ${4:STR_PAD_LEFT} );${5}
-# str_repeat
-snippet str  str_repeat( '-=', 10 )                    // produces '-=-=-=-=-=-=-=-=-=-='
-	str_repeat( '${1: }', ${2:10} );${3}
-# str_replace
-snippet str  str_replace( ' ', '', $string )
-	str_replace( '${1: }', '${2}', ${3:$string} );${4}
-# strcmp
-snippet str  strcmp( $str1 , $str2 )
-	strcmp( ${1:$str1} , ${2:$str2} );${3}
-# strip_tags
-snippet str  strip_tags( $string, '<p><a>' )           // allow tags <p> and <a> (the closing tags included)
-	strip_tags( ${1:$string}, '${2}' );${3}
-# strlen
-snippet str  strlen( $string )
-	strlen( ${1:$string} );${2}
-# strpos
-snippet str  strpos( $haystack, $needle )
-	strpos( ${1:$haystack}, ${2:$needle} );${3}
-# strrpos
-snippet str  strrpos( $haystack, $needle )
-	strrpos( ${1:$haystack}, ${2:$needle} );${3}
-# strstr
-snippet str  strstr( $haystack, $needle )              // strstr( 'name@example.com', '@' ); prints @example.com
-	strstr( ${1:$haystack}, ${2:$needle} );${3}
-# strtolower
-snippet str strtolower( $string ) 
-	strtolower( ${1:$string} );${2}
-# strtoupper
-snippet str strtoupper( $string ) 
-	strtoupper( ${1:$string} );${2}
-# substr
-snippet str substr( $string, $start, $length )
-	substr( ${1:$string}, ${2:$start}, ${3:$length} );${4}
+# require_once
+snippet reqo
+	require_once ${1:''};
 # vd
 snippet vd
 	var_dump(${1});${2}
