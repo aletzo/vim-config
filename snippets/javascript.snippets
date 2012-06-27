@@ -1,11 +1,11 @@
 # console.log
 snippet con
-	console.log(${1});
+	console.log(${1});${2}
 # console.log with down arrows
 snippet cona
 	console.log('vVvVv');
 	console.log(${1});
-	console.log('^^^^^');
+	console.log('^^^^^');${2}
 # Ext AJAX Request
 snippet ext Ajax Request
 	Ext.Ajax.request( {
@@ -17,7 +17,7 @@ snippet ext Ajax Request
 		success: function( response ) {
 			${3}
 		}
-	} );
+	} );${4}
 # Ext Button
 snippet ext Button
 	var ${1:button} = new Ext.button.Button( {
@@ -26,14 +26,14 @@ snippet ext Button
 		handler: function( ${3} ) {
 			${4}
 		}
-	} );
+	} );${5}
 # Ext JSON Decode
 snippet ext JSON Decode
-	Ext.JSON.decode( ${1:response.responseText} );
+	Ext.JSON.decode( ${1:response.responseText} );${2}
 # Ext JSON Encode
 snippet ext JSON Encode
-	Ext.JSON.encode( ${1} );
+	Ext.JSON.encode( ${1} );${2}
 # Ext Message Alert
 snippet ext Message Alert
-	Ext.Msg.alert( '${1:Warning}', ${2} );
+	Ext.Msg.alert( '${1:Warning}', ${2} );${3}
 
