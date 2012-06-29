@@ -18,6 +18,8 @@ filetype on                     " determines the type of the current file
 filetype plugin on              " use the file type plugins
 
 
+"let g:Powerline_symbols = 'fancy'
+"let g:Powerline_dividers_override = ['>>', '>', '<<', '<']
 
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags' "tell taglist where to find ctags
 let Tlist_Show_One_File = 1                      " Only show tags for current buffer
