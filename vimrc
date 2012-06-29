@@ -90,6 +90,7 @@ set history=100                 " keep 100 lines of history
 set hlsearch                    " highlight the last searched term
 set incsearch                   " incremental search
 set ignorecase                  " search ignoring case
+set laststatus=2                " always show the statusline
 set matchtime=5                 " blink matching chars for .x seconds
 set nocompatible                " Use Vim defaults
 set noerrorbells                " No error bells please
