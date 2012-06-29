@@ -36,5 +36,3 @@ noremap <C-tab> :tabnext<cr>
 " Remap <C-space> to word completion
 noremap! <C-space> <C-n>
 
-set guifont=Monaco:h11
-

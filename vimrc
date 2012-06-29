@@ -6,6 +6,8 @@ call pathogen#helptags()
 "colorscheme desert
 colorscheme solarized
 
+set guifont=Monaco\ for\ Powerline:h11
+let Powerline_symbols = 'fancy'
 
 
 
