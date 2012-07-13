@@ -55,6 +55,7 @@ imap <left> <nop>
 imap <right> <nop>
 
 inoremap jk <Esc>
+noremap jk <Esc>
 
 
 
