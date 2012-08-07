@@ -36,4 +36,11 @@ snippet ext JSON Encode
 # Ext Message Alert
 snippet ext Message Alert
 	Ext.Msg.alert( '${1:Warning}', ${2} );${3}
+# Ext initComponent function
+snippet ext initComponent
+	initComponent: function() {
+		${1}	
+		this.callParent( arguments );
+	}
+
 
