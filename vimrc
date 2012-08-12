@@ -58,6 +58,12 @@ inoremap jk <Esc>
 " noremap jk <Esc> " this sucks
 
 
+" use the arrow keys to move between split windows
+nnoremap <silent> <right> <c-w>l
+nnoremap <silent> <left> <c-w>h
+nnoremap <silent> <up> <c-w>k
+nnoremap <silent> <down> <c-w>j
+
 
 " Swap ; and :  Convenient -- NOT :(
 "nnoremap ; :
