@@ -42,5 +42,7 @@ snippet ext initComponent
 		${1}	
 		this.callParent( arguments );
 	}
+snippet ext parse date
+	Ext.Date.format( Ext.Date.parse( ${1:data.date.date}, ${2:'Y-m-d H:i:s'} ), ${3:'d-M-Y'} )
 
 
