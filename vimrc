@@ -104,8 +104,7 @@ set noerrorbells                " No error bells please
 set number                      " display the line numbers
 set preserveindent              " save as much indent structure as possible
 set ruler                       " show the cursor position
-" confusing when many split windows
-"set scrolloff=5                 " keep at least 5 lines around the cursor
+set scrolloff=5                 " keep at least 5 lines around the cursor
 set shiftround                  " always round indents to multiple of shiftwidth
 set shiftwidth=4
 set showcmd                     " This shows what you are typing as a command
