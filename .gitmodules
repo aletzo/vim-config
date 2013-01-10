@@ -34,3 +34,9 @@
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
+[submodule "bundle/Rainbow-Parentheses-Improved"]
+	path = bundle/Rainbow-Parentheses-Improved
+	url = git://github.com/vim-scripts/Rainbow-Parentheses-Improved.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git
