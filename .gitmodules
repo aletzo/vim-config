@@ -40,3 +40,9 @@
 [submodule "bundle/command-t"]
 	path = bundle/command-t
 	url = git://git.wincent.com/command-t.git
+[submodule "vim-css-color"]
+	path = vim-css-color
+	url = git://github.com/skammer/vim-css-color.git
+[submodule "bundle/vim-css-color"]
+	path = bundle/vim-css-color
+	url = git://github.com/skammer/vim-css-color.git

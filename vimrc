@@ -24,6 +24,11 @@ let Tlist_Show_One_File = 1                      " Only show tags for current bu
 
 
 
+
+
+" activate the rainbow parentheses plugin
+au syntax * cal rainbow#activate() 
+
 " PHP syntax checking  
 map <C-P> :!php -l %<CR>      
 
