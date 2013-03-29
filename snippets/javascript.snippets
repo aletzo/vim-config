@@ -44,5 +44,21 @@ snippet ext initComponent
 	}
 snippet ext parse date
 	Ext.Date.format( Ext.Date.parse( ${1:data.date.date}, ${2:'Y-m-d H:i:s'} ), ${3:'d-M-Y'} )
+# meteor mongodb find fetch
+snippet mm find fetch
+	find( {${1}} ).fetch();${2}
+# meteor mongodb find one
+snippet mm findOne
+	findOne( { ${1:_id}: ${2} } );${3}
+# meteor mongodb update
+snippet mm update
+	update( 
+		{
+			id: ${1:id}
+		}, {
+			$set: ${2:data}
+		}
+	);
+	${3}
 
 

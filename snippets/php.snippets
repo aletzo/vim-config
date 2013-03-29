@@ -18,7 +18,7 @@ snippet er error_log
 	error_log( ${1} );${2}
 snippet er error_log( $q )
 	error_log( '$q' );
-	error_log( str_replace( "\n", ' ', $q ) );${1}
+	error_log( str_replace( array( "\n", "\t" ), ' ', $q ) );${1}
 snippet er error_log( $results )
 	error_log( '$results' );
 	error_log( json_encode( $results ) );${1}
