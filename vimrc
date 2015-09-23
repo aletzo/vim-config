@@ -92,6 +92,7 @@ set bs=2                        " backspacing over everything in insert mode
 " NOT WORKING (why ???)
 "set completeopt=longest,menuone
 
+set colorcolumn=80              " set the 80 characters soft line limit
 set copyindent                  " use existing indents for new indents
 set dir=~/tmp                   " use this directory to save the swp files
 set encoding=utf-8
