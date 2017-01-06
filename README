@@ -1,5 +1,6 @@
 Execute the following commands to install on your machine:
 cd ~
+mkdir tmp
 git clone http://github.com/aletzo/vim-config.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
@@ -53,5 +54,11 @@ Now you have to override the ctags that comes with OS X
 13. restart the terminal
 14. which ctags should return "/usr/local/bin/ctags/ctags"
 
+
+=================
+=================
+
+Find and install a custom font:
+Monaco_Linux-Powerline.ttf
 
 
