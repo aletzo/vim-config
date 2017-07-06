@@ -6,8 +6,7 @@ call pathogen#helptags()
 "colorscheme desert
 colorscheme solarized
 
-if has('gui_running')
-else
+if ! has('gui_running')
   set t_Co=256
   let g:solarized_termcolors=256
 endif
