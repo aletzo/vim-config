@@ -55,6 +55,50 @@ Now you have to override the ctags that comes with OS X
 14. which ctags should return "/usr/local/bin/ctags/ctags"
 
 
+How to keep the ctags up-to-date (from http://tbaggery.com/2011/08/08/effortless-ctags-with-git.html):
+
+1. Execute:
+
+    git config --global init.templatedir '~/.git_template'
+    mkdir -p ~/.git_template/hooks
+    
+2. Create .git_template/hooks/ctags and mark as executable:
+
+    #!/bin/sh
+    set -e
+    PATH="/usr/local/bin:$PATH"
+    dir="`git rev-parse --git-dir`"
+    trap 'rm -f "$dir/$$.tags"' EXIT
+    git ls-files | \
+      ctags --tag-relative -L - -f"$dir/$$.tags" --languages=-javascript,sql
+    mv "$dir/$$.tags" "$dir/tags"
+
+3. Create .git_template/hooks/post-commit and mark as executable:
+    
+    #!/bin/sh
+    .git/hooks/ctags >/dev/null 2>&1 &
+
+4. Create .git_template/hooks/post-merge and mark as executable:
+    
+    #!/bin/sh
+    .git/hooks/ctags >/dev/null 2>&1 &
+
+5. Create .git_template/hooks/post-checkout and mark as executable:
+    
+    #!/bin/sh
+    .git/hooks/ctags >/dev/null 2>&1 &
+
+6. Create .git_template/hooks/post-rewrite and mark as executable:
+
+    #!/bin/sh
+    case "$1" in
+      rebase) exec .git/hooks/post-merge ;;
+    esac
+
+7. Use `git init` in existing repositories to copy these hooks in.
+
+
+
 =================
 =================
 
