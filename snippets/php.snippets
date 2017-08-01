@@ -1,9 +1,3 @@
-# \Apple\PltBundle\Helper\DebugHelper::log()
-snippet ade
-	\Apple\PltBundle\Helper\DebugHelper::log(${1});${2}
-# DebugHelper::log()
-snippet de
-	DebugHelper::log(${1});${2}
 # echo shorter
 snippet e
 	echo ${1:$var};${2}
@@ -15,44 +9,44 @@ snippet endi
 	endif ?>${1}
 # error_log
 snippet er error_log
-	error_log( ${1} );${2}
-snippet er error_log( $q )
-	error_log( '$q' );
-	error_log( str_replace( array( "\n", "\t" ), ' ', $q ) );${1}
+	error_log(${1});${2}
+snippet er error_log($q)
+	error_log('$q');
+	error_log(str_replace(array("\n", "\t"), ' ', $q));${1}
 snippet er error_log( $results )
-	error_log( '$results' );
-	error_log( json_encode( $results ) );${1}
+	error_log('$results');
+	error_log(json_encode($results));${1}
 # explode
 snippet exp
-	explode( ${1:'|'}, ${2:$array} );${3}
+	explode(${1:'|'}, ${2:$array});${3}
 # foreach shorter
 snippet fore
-	foreach ( ${1:$results} as ${2:$result} ) {
+	foreach (${1:$results} as ${2:$result}) {
 		${3:}
 	}${4}
 # foreach with key
 snippet forek
-	foreach ( ${1:$results} as ${2:$key} => ${3:$value} ) {
+	foreach (${1:$results} as ${2:$key} => ${3:$value}) {
 		${4}
 	}${5}
 # getInstance
 snippet geti
-	getInstance( )${1:->}
+	getInstance()${1:->}
 # html_entity_decode
 snippet html html_entity_decode      : &quot; => "
-	html_entity_decode( ${1:$string} );${2}
+	html_entity_decode(${1:$string});${2}
 # htmlentities
 snippet html htmlentities            : < => &lt
-	htmlentities( ${1:$string} );${2}
+	htmlentities(${1:$string});${2}
 # htmlspecialchars_decode
 snippet html htmlspecialchars_decode : &gt; => >
-	htmlspecialchars_decode( ${1:$string} );${2}
+	htmlspecialchars_decode(${1:$string});${2}
 # htmlspecialchars
 snippet html htmlspecialchars        : ' => &#039;
-	htmlspecialchars( ${1:$string} );${2}
+	htmlspecialchars(${1:$string});${2}
 # implode
 snippet imp
-	implode( ${1:'|'}, ${2:$array} );${3}
+	implode(${1:'|'}, ${2:$array});${3}
 # php tag
 snippet p
 	<?php ${1}
@@ -65,41 +59,41 @@ snippet pre
 	print_r(${1});
 	echo '</pre>';${2}
 # str_pad
-snippet str  str_pad( $input, 10, '-=', STR_PAD_LEFT ) // produces '-=-=-Alien'
-	str_pad( ${1:$string}, ${2:10}, '${3: }', ${4:STR_PAD_LEFT} );${5}
+snippet str  str_pad($input, 10, '-=', STR_PAD_LEFT) // produces '-=-=-Alien'
+	str_pad(${1:$string}, ${2:10}, '${3: }', ${4:STR_PAD_LEFT});${5}
 # str_repeat
-snippet str  str_repeat( '-=', 10 )                    // produces '-=-=-=-=-=-=-=-=-=-='
-	str_repeat( '${1: }', ${2:10} );${3}
+snippet str  str_repeat('-=', 10)                    // produces '-=-=-=-=-=-=-=-=-=-='
+	str_repeat('${1: }', ${2:10});${3}
 # str_replace
-snippet str  str_replace( ' ', '', $string )
-	str_replace( '${1: }', '${2}', ${3:$string} );${4}
+snippet str  str_replace(' ', '', $string)
+	str_replace('${1: }', '${2}', ${3:$string});${4}
 # strcmp
-snippet str  strcmp( $str1 , $str2 )
-	strcmp( ${1:$str1} , ${2:$str2} );${3}
+snippet str  strcmp($str1 , $str2)
+	strcmp(${1:$str1} , ${2:$str2});${3}
 # strip_tags
-snippet str  strip_tags( $string, '<p><a>' )           // allow tags <p> and <a> (the closing tags included)
-	strip_tags( ${1:$string}, '${2}' );${3}
+snippet str  strip_tags($string, '<p><a>')           // allow tags <p> and <a> (the closing tags included)
+	strip_tags(${1:$string}, '${2}');${3}
 # strlen
-snippet str  strlen( $string )
-	strlen( ${1:$string} );${2}
+snippet str  strlen($string)
+	strlen(${1:$string});${2}
 # strpos
-snippet str  strpos( $haystack, $needle )
-	strpos( ${1:$haystack}, ${2:$needle} );${3}
+snippet str  strpos($haystack, $needle)
+	strpos(${1:$haystack}, ${2:$needle});${3}
 # strrpos
-snippet str  strrpos( $haystack, $needle )
-	strrpos( ${1:$haystack}, ${2:$needle} );${3}
+snippet str  strrpos($haystack, $needle)
+	strrpos(${1:$haystack}, ${2:$needle});${3}
 # strstr
-snippet str  strstr( $haystack, $needle )              // strstr( 'name@example.com', '@' ); prints @example.com
-	strstr( ${1:$haystack}, ${2:$needle} );${3}
+snippet str  strstr($haystack, $needle)              // strstr( 'name@example.com', '@' ); prints @example.com
+	strstr(${1:$haystack}, ${2:$needle});${3}
 # strtolower
-snippet str strtolower( $string ) 
-	strtolower( ${1:$string} );${2}
+snippet str strtolower($string) 
+	strtolower(${1:$string});${2}
 # strtoupper
-snippet str strtoupper( $string ) 
-	strtoupper( ${1:$string} );${2}
+snippet str strtoupper($string) 
+	strtoupper(${1:$string});${2}
 # substr
-snippet str substr( $string, $start, $length )
-	substr( ${1:$string}, ${2:$start}, ${3:$length} );${4}
+snippet str substr($string, $start, $length)
+	substr(${1:$string}, ${2:$start}, ${3:$length});${4}
 # require_once
 snippet reqo
 	require_once ${1:''};${2}
