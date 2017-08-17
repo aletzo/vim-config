@@ -58,3 +58,6 @@
 [submodule "bundle/emmet.vim"]
 	path = bundle/emmet.vim
 	url = git://github.com/vim-scripts/emmet.vim.git
+[submodule "bundle/vim-multiple-cursors"]
+	path = bundle/vim-multiple-cursors
+	url = git://github.com/vim-scripts/vim-multiple-cursors.git
