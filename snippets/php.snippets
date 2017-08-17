@@ -13,7 +13,7 @@ snippet er error_log
 snippet er error_log($q)
 	error_log('$q');
 	error_log(str_replace(array("\n", "\t"), ' ', $q));${1}
-snippet er error_log( $results )
+snippet er error_log($results)
 	error_log('$results');
 	error_log(json_encode($results));${1}
 # explode
@@ -83,7 +83,7 @@ snippet str  strpos($haystack, $needle)
 snippet str  strrpos($haystack, $needle)
 	strrpos(${1:$haystack}, ${2:$needle});${3}
 # strstr
-snippet str  strstr($haystack, $needle)              // strstr( 'name@example.com', '@' ); prints @example.com
+snippet str  strstr($haystack, $needle)              // strstr('name@example.com', '@'); prints @example.com
 	strstr(${1:$haystack}, ${2:$needle});${3}
 # strtolower
 snippet str strtolower($string) 
@@ -105,3 +105,4 @@ snippet Y
 	<<<YIPPEEKAYAY
 	${1}
 	YIPPEEKAYAY;
+
