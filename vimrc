@@ -129,4 +129,4 @@ set viminfo='20,\"200           " keep a .viminfo file
 syntax on                       " syntax highlighting
 
 " which tags files to load
-set tags=tags
+set tags=tags;/
