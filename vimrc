@@ -28,9 +28,6 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags' "tell taglist where to find ctags
 let Tlist_Show_One_File = 1                      " Only show tags for current buffer
 
 
-
-
-
 " activate the rainbow parentheses plugin
 au syntax * cal rainbow#activate() 
 
@@ -41,17 +38,17 @@ map <C-P> :!php -l %<CR>
 map <F2> :NERDTreeToggle<CR>
 
 " toggle the taglist
-map <F3> :TlistToggle<CR>
+"map <F3> :TlistToggle<CR>
 
 " activate html snippets in php files
-map <F7> :set ft=php.html<CR>:highlight Normal guibg=Black<CR>
+"map <F7> :set ft=php.html<CR>:highlight Normal guibg=Black<CR>
 
 " deactivate html snippets in php files
-map <F8> :set ft=php<CR>:set background=dark<CR>
+"map <F8> :set ft=php<CR>:set background=dark<CR>
 
 
 " source current file (e.g. to load new vimrc configuration)
-map <F5> :so %<CR> 
+"map <F5> :so %<CR> 
 
 
 " disable the arrow keys
@@ -130,3 +127,13 @@ syntax on                       " syntax highlighting
 
 " which tags files to load
 set tags=tags;/
+
+" Drop Vdebug settings at the end of the file " 
+let g:vdebug_options["break_on_open"] = 1
+let g:vdebug_options["ide_key"] = ""
+let g:vdebug_options["path_maps"] = {'/var/www/html/GPS-Refresh/': '/Users/alexandros/Projects/GPS-Refresh/'}
+let g:vdebug_options["port"] = "10000"
+let g:vdebug_options["server"] = "10.254.254.254"
+let g:vdebug_options["timeout"] = "10"
+let g:vdebug_options["watch_window_style"] = "compact"
+
