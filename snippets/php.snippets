@@ -31,6 +31,8 @@ snippet er error_log(json_encode($results))
 snippet er error_log(var_export($results, true))
 	error_log('$results');
 	error_log(var_export($results, true));${1}
+snippet er error_log('inside ')
+	error_log('inside ${1}');
 # explode
 snippet exp
 	explode(${1:'|'}, ${2:$array});${3}
