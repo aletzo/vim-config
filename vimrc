@@ -32,16 +32,16 @@ let Tlist_Show_One_File = 1                      " Only show tags for current bu
 au syntax * cal rainbow#activate() 
 
 " PHP syntax checking  
-map <C-P> :!php -l %<CR>      
+map <D-F12> :!php -l %<CR>      
 
 " toggle the NERDTree
-map <F2> :NERDTreeToggle<CR>
+map <D-F2> :NERDTreeToggle<CR>
 
 " toggle the NERDTree
-map <F3> :NERDTreeFind<CR>
+map <D-F3> :NERDTreeFind<CR>
 
 " toggle the taglist
-map <F4> :TlistToggle<CR>
+map <D-F4> :TlistToggle<CR>
 
 " activate html snippets in php files
 "map <F7> :set ft=php.html<CR>:highlight Normal guibg=Black<CR>
@@ -53,6 +53,9 @@ map <F4> :TlistToggle<CR>
 " source current file (e.g. to load new vimrc configuration)
 map <C-S> :so %<CR> 
 
+"inoremap 4 $
+"inoremap $ 4
+inoremap <C-D> $
 
 " disable the arrow keys
 map <up> <nop>
@@ -81,17 +84,19 @@ nnoremap <silent> <down> <c-w>j
 
 
 " disable the F1 help screen
-nmap <F1> <nop>
+"nmap <F1> <nop>
+"nmap <c-l> !open [http://www.php.net/<cword> http://www.php.net/<cword>]
+
 
 " with the cursor on foo it outputs:
 " console.log('foo');
 " console.log(foo);
-nmap <c-c> V10<iconsole.log(jkA);jkyypkf(a'jkea'jk
+nmap <c-c> V10<iconsole.log(jkA);jkyypkf(a'jkf)i'jk
 
 " with the cursor on foo it outputs:
 " error_log('foo');
 " error_log(foo);
-nmap <c-e>1 V10<ierror_log(jkA);jkyypkf(a'jkea'jk
+nmap <c-e>1 V10<ierror_log(jkA);jkyypkf(a'jkf)i'jk
 
 " with the cursor on foo it outputs:
 " error_log('foo');
@@ -101,7 +106,7 @@ nmap <c-e>2 V10<ierror_log(jkA);jkyypwastr_replace(array("\n", "\t"), ' ', jkea)
 " with the cursor on foo it outputs:
 " error_log('foo');
 " error_log(json_encode(foo, true));
-nmap <c-e>3 V10<ierror_log(jkA);jkyypwajson_encode(jkea, true)jkkF(a'jkea'jk
+nmap <c-e>3 V10<ierror_log(jkA);jkyypwajson_encode(jkf)i, true)jkkF(a'jkf)i'jk
 
 
 
@@ -159,10 +164,10 @@ endif
 " Drop Vdebug settings at the end of the file " 
 "let g:vdebug_options["break_on_open"] = 1
 "let g:vdebug_options['ide_key'] = 'XDEBUG_ECLIPSE'
-let g:vdebug_options["path_maps"] = {"/var/www/html/GPS-Refresh/": "/Users/alexandros/Projects/GPS-Refresh/"}
+let g:vdebug_options["path_maps"] = {"/var/www/html/": "/Users/alexandros/Projects/", "/var/www/html/GPS-ImageServer/": "/Users/alexandros/Projects/GPS-ImageServer/", "/var/www/html/GPS-Refresh/": "/Users/alexandros/Projects/GPS-Refresh/"}
 let g:vdebug_options["port"] = "9005"
 let g:vdebug_options["server"] = "10.254.254.254"
-let g:vdebug_options["timeout"] = "10"
+let g:vdebug_options["timeout"] = "20"
 let g:vdebug_options["watch_window_style"] = "compact"
 let g:vdebug_options["debug_window_level"] = 2
 let g:vdebug_options["debug_file_level"] = 2
