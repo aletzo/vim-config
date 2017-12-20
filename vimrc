@@ -24,12 +24,9 @@ let Powerline_symbols = 'fancy'
 filetype on                     " determines the type of the current file
 filetype plugin on              " use the file type plugins
 
-let Tlist_Ctags_Cmd='/usr/local/bin/ctags' "tell taglist where to find ctags
-let Tlist_Show_One_File = 1                      " Only show tags for current buffer
+let Tlist_Ctags_Cmd='/usr/local/bin/ctags' " tell taglist where to find ctags
+let Tlist_Show_One_File = 1                " Only show tags for current buffer
 
-
-" activate the rainbow parentheses plugin
-au syntax * cal rainbow#activate() 
 
 " PHP syntax checking  
 map <D-F12> :!php -l %<CR>      
@@ -77,6 +74,9 @@ nnoremap <silent> <left> <c-w>h
 nnoremap <silent> <up> <c-w>k
 nnoremap <silent> <down> <c-w>j
 
+" map Z to ~ to compensate for ~'s position in the new mac's keyboard
+nnoremap Z ~
+
 
 " Swap ; and :  Convenient -- NOT :(
 "nnoremap ; :
@@ -107,6 +107,11 @@ nmap <c-e>2 V10<ierror_log(jkA);jkyypwastr_replace(array("\n", "\t"), ' ', jkea)
 " error_log('foo');
 " error_log(json_encode(foo, true));
 nmap <c-e>3 V10<ierror_log(jkA);jkyypwajson_encode(jkf)i, true)jkkF(a'jkf)i'jk
+
+
+nmap - $
+nmap <Space> <PageDown>
+nmap <BS> <PageUp>
 
 
 
@@ -162,10 +167,10 @@ if !exists('g:vdebug_options')
 endif
 
 " Drop Vdebug settings at the end of the file " 
-"let g:vdebug_options["break_on_open"] = 1
-"let g:vdebug_options['ide_key'] = 'XDEBUG_ECLIPSE'
+let g:vdebug_options["break_on_open"] = 1
+let g:vdebug_options['ide_key'] = "XDEBUG_ECLIPSE"
 let g:vdebug_options["path_maps"] = {"/var/www/html/": "/Users/alexandros/Projects/", "/var/www/html/GPS-ImageServer/": "/Users/alexandros/Projects/GPS-ImageServer/", "/var/www/html/GPS-Refresh/": "/Users/alexandros/Projects/GPS-Refresh/"}
-let g:vdebug_options["port"] = "9005"
+let g:vdebug_options["port"] = "9000"
 let g:vdebug_options["server"] = "10.254.254.254"
 let g:vdebug_options["timeout"] = "20"
 let g:vdebug_options["watch_window_style"] = "compact"
