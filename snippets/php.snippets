@@ -1,3 +1,9 @@
+# __construct
+snippet _c
+	public function __construct()
+	{
+		${1}
+	}
 # aaa
 snippet aaa
 	error_log('aaa 1');
@@ -7,6 +13,11 @@ snippet bbb
 # ccc
 snippet ccc
 	error_log('ccc 1');
+# class
+snippet cl
+	class ${1}
+	{
+	}
 # console.log
 snippet con
 	console.log(${1});${2}
@@ -78,6 +89,24 @@ snippet pre
 	echo '<pre>';
 	print_r(${1});
 	echo '</pre>';${2}
+# private function
+snippet prif
+	private function ${1}()
+	{
+
+	}
+# protected function
+snippet prof
+	protected function ${1}()
+	{
+
+	}
+# public function
+snippet puf
+	public function ${1}()
+	{
+
+	}
 # str_pad
 snippet str  str_pad($input, 10, '-=', STR_PAD_LEFT) // produces '-=-=-Alien'
 	str_pad(${1:$string}, ${2:10}, '${3: }', ${4:STR_PAD_LEFT});${5}
