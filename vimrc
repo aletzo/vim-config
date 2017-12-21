@@ -74,6 +74,11 @@ nnoremap <silent> <left> <c-w>h
 nnoremap <silent> <up> <c-w>k
 nnoremap <silent> <down> <c-w>j
 
+nnoremap <silent> <d-down> <c-w>-
+nnoremap <silent> <d-up> <c-w>+
+nnoremap <silent> <d-left> <c-w><
+nnoremap <silent> <d-right> <c-w>>
+
 " map Z to ~ to compensate for ~'s position in the new mac's keyboard
 nnoremap Z ~
 
