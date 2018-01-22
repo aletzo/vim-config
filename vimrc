@@ -111,12 +111,15 @@ nmap <c-e>2 V10<ierror_log(jkA);jkyypwastr_replace(array("\n", "\t"), ' ', jkea)
 " with the cursor on foo it outputs:
 " error_log('foo');
 " error_log(json_encode(foo, true));
-nmap <c-e>3 V10<ierror_log(jkA);jkyypwajson_encode(jkf)i, true)jkkF(a'jkf)i'jk
+nmap <c-e>3 V10<ierror_log(jkA);jkyypwajson_encode(jkf)i)jkkF(a'jkf)i'jk
 
 
 nmap - $
 nmap <Space> <PageDown>
 nmap <BS> <PageUp>
+
+
+nmap <c-b> :CtrlPBuffer<CR>
 
 
 
@@ -183,3 +186,17 @@ let g:vdebug_options["debug_window_level"] = 2
 let g:vdebug_options["debug_file_level"] = 2
 let g:vdebug_options["debug_file"] = "/tmp/vdebug.log"
 
+
+
+" Auto-detect some files as HTML files
+augroup filetypedetect
+    au BufRead,BufNewFile *.ts  set filetype=html
+    au BufRead,BufNewFile *.vue set filetype=html
+augroup END
+
+
+"Automatically source the Vimrc file on save.
+augroup autosourcing
+	autocmd!
+	autocmd BufWritePost .vimrc source %
+augroup END
