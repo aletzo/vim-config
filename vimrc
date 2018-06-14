@@ -64,6 +64,7 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
+inoremap fj $
 inoremap jk <Esc>
 " noremap jk <Esc> " this sucks
 
@@ -190,8 +191,10 @@ let g:vdebug_options["debug_file"] = "/tmp/vdebug.log"
 
 " Auto-detect some files as HTML files
 augroup filetypedetect
-    au BufRead,BufNewFile *.ts  set filetype=html
-    au BufRead,BufNewFile *.vue set filetype=html
+    au BufRead,BufNewFile *.blade set filetype=php
+    au BufRead,BufNewFile *.twig  set filetype=php
+    au BufRead,BufNewFile *.vue   set filetype=html
+    au BufRead,BufNewFile *.vue   set filetype=html
 augroup END
 
 
@@ -200,3 +203,7 @@ augroup autosourcing
 	autocmd!
 	autocmd BufWritePost .vimrc source %
 augroup END
+
+" tell ctrl-p to ignore some directories 
+let g:ctrlp_custom_ignore = '\v[\/](build|cache|dist|node_modules|target|vendor)|(\.(git|ico|idea|svn|swp))$'
+

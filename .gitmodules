@@ -1,48 +1,48 @@
 [submodule "bundle/fugitive"]
 	path = bundle/fugitive
-	url = http://github.com/tpope/vim-fugitive.git
+	url = https://github.com/tpope/vim-fugitive.git
 [submodule "bundle/matchit"]
 	path = bundle/matchit
-	url = http://github.com/vim-scripts/matchit.zip.git
+	url = https://github.com/vim-scripts/matchit.zip.git
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
-	url = git://github.com/scrooloose/nerdtree.git
+	url = https://github.com/scrooloose/nerdtree.git
 [submodule "bundle/taglist"]
 	path = bundle/taglist
-	url = git://github.com/vim-scripts/taglist.vim.git
+	url = https://github.com/vim-scripts/taglist.vim.git
 [submodule "bundle/exuberant-ctags"]
 	path = bundle/exuberant-ctags
-	url = git://github.com/kokx/exuberant-ctags.git
+	url = https://github.com/kokx/exuberant-ctags.git
 [submodule "bundle/ZoomWin"]
 	path = bundle/ZoomWin
-	url = git://github.com/vim-scripts/ZoomWin.git
+	url = https://github.com/vim-scripts/ZoomWin.git
 [submodule "bundle/snipMate"]
 	path = bundle/snipMate
-	url = git://github.com/vim-scripts/snipMate.git
+	url = https://github.com/vim-scripts/snipMate.git
 [submodule "bundle/ack"]
 	path = bundle/ack
-	url = git://github.com/mileszs/ack.vim
+	url = https://github.com/mileszs/ack.vim
 [submodule "vim-colors-solarized"]
 	path = vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
-	url = git://github.com/altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "bundle/vim-powerline"]
 	path = bundle/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
+	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "bundle/command-t"]
 	path = bundle/command-t
-	url = git://git.wincent.com/command-t.git
+	url = https://git.wincent.com/command-t.git
 [submodule "vim-css-color"]
 	path = vim-css-color
-	url = git://github.com/skammer/vim-css-color.git
+	url = https://github.com/skammer/vim-css-color.git
 [submodule "bundle/vim-css-color"]
 	path = bundle/vim-css-color
-	url = git://github.com/skammer/vim-css-color.git
+	url = https://github.com/skammer/vim-css-color.git
 [submodule "bundle/handlebars"]
 	path = bundle/handlebars
-	url = git://github.com/nono/vim-handlebars.git
+	url = https://github.com/nono/vim-handlebars.git
 [submodule "bundle/bundle/typescript-vim"]
 	path = bundle/bundle/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim.git
@@ -51,13 +51,19 @@
 	url = https://github.com/leafgarland/typescript-vim.git
 [submodule "bundle/emmet.vim"]
 	path = bundle/emmet.vim
-	url = git://github.com/vim-scripts/emmet.vim.git
+	url = https://github.com/vim-scripts/emmet.vim.git
 [submodule "bundle/vim-multiple-cursors"]
 	path = bundle/vim-multiple-cursors
-	url = git://github.com/vim-scripts/vim-multiple-cursors.git
+	url = https://github.com/vim-scripts/vim-multiple-cursors.git
 [submodule "bundle/vdebug"]
 	path = bundle/vdebug
-	url = git://github.com/joonty/vdebug.git
+	url = https://github.com/joonty/vdebug.git
 [submodule "bundle/ctrlp.vim"]
 	path = bundle/ctrlp.vim
-	url = git://github.com/ctrlpvim/ctrlp.vim.git
+	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "bundle/vim-twig"]
+	path = bundle/vim-twig
+	url = https://github.com/lumiliet/vim-twig.git
+[submodule "bundle/tabular"]
+	path = bundle/tabular
+	url = https://github.com/godlygeek/tabular.git
