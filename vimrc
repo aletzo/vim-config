@@ -64,7 +64,7 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-inoremap fj $
+inoremap jj $
 inoremap jk <Esc>
 " noremap jk <Esc> " this sucks
 
@@ -120,7 +120,22 @@ nmap <Space> <PageDown>
 nmap <BS> <PageUp>
 
 
+" use double ESC to switch to Normal mode when in :term
+tnoremap <ESC><ESC> <C-\><C-N>
+
+
 nmap <c-b> :CtrlPBuffer<CR>
+
+
+" Shortcut to rapidly toggle `set list`
+nmap <leader>l :set list!<CR>
+
+set listchars=tab:▸\ ,eol:¬,space:.
+
+"Invisible character colors 
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
+highlight Space guifg=#4a4a59
 
 
 
@@ -170,24 +185,6 @@ syntax on                       " syntax highlighting
 
 " which tags files to load
 set tags=tags;/
-
-if !exists('g:vdebug_options')
-    let g:vdebug_options = {}
-endif
-
-" Drop Vdebug settings at the end of the file " 
-let g:vdebug_options["break_on_open"] = 1
-let g:vdebug_options['ide_key'] = "XDEBUG_ECLIPSE"
-let g:vdebug_options["path_maps"] = {"/var/www/html/": "/Users/alexandros/Projects/", "/var/www/html/GPS-ImageServer/": "/Users/alexandros/Projects/GPS-ImageServer/", "/var/www/html/GPS-Refresh/": "/Users/alexandros/Projects/GPS-Refresh/"}
-let g:vdebug_options["port"] = "9000"
-let g:vdebug_options["server"] = "10.254.254.254"
-let g:vdebug_options["timeout"] = "20"
-let g:vdebug_options["watch_window_style"] = "compact"
-let g:vdebug_options["debug_window_level"] = 2
-let g:vdebug_options["debug_file_level"] = 2
-let g:vdebug_options["debug_file"] = "/tmp/vdebug.log"
-
-
 
 " Auto-detect some files as HTML files
 augroup filetypedetect
