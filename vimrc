@@ -1,8 +1,3 @@
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
-
-
-
 "colorscheme desert
 colorscheme solarized
 
@@ -40,19 +35,9 @@ map <D-F3> :NERDTreeFind<CR>
 " toggle the taglist
 map <D-F4> :TlistToggle<CR>
 
-" activate html snippets in php files
-"map <F7> :set ft=php.html<CR>:highlight Normal guibg=Black<CR>
-
-" deactivate html snippets in php files
-"map <F8> :set ft=php<CR>:set background=dark<CR>
-
 
 " source current file (e.g. to load new vimrc configuration)
 map <C-S> :so %<CR> 
-
-"inoremap 4 $
-"inoremap $ 4
-inoremap <C-D> $
 
 " disable the arrow keys
 map <up> <nop>
@@ -66,7 +51,6 @@ imap <right> <nop>
 
 inoremap jj $
 inoremap jk <Esc>
-" noremap jk <Esc> " this sucks
 
 
 " use the arrow keys to move between split windows
@@ -83,10 +67,6 @@ nnoremap <silent> <d-right> <c-w>>
 " map Z to ~ to compensate for ~'s position in the new mac's keyboard
 nnoremap Z ~
 
-
-" Swap ; and :  Convenient -- NOT :(
-"nnoremap ; :
-"nnoremap : ;
 
 
 " disable the F1 help screen
