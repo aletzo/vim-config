@@ -1,15 +1,19 @@
 Installation
 ============
 Execute the following commands to install on your machine:
-cd ~
-mkdir tmp
-git clone http://github.com/aletzo/vim-config.git ~/.vim
-ln -s ~/.vim/vimrc ~/.vimrc
-ln -s ~/.vim/gvimrc ~/.gvimrc
-cd ~/.vim
 
-Find and install a custom font:
-Monaco_Linux-Powerline.ttf
+    mkdir ~/tmp
+    git clone http://github.com/aletzo/vim-config.git ~/.vim
+    ln -s ~/.vim/vimrc ~/.vimrc
+    ln -s ~/.vim/gvimrc ~/.gvimrc
+
+Open vim and execute:
+
+    :PluginInstall
+
+Find and install a Monaco_Linux-Powerline.ttf:
+
+    https://gist.github.com/kevinis/c788f85a654b2d7581d8#file-monaco-for-powerline-ttf
 
 
 CTAGS Installation
