@@ -145,6 +145,7 @@ set incsearch                   " incremental search
 set ignorecase                  " search ignoring case
 set laststatus=2                " always show the statusline
 set matchtime=5                 " blink matching chars for .x seconds
+set modelines=0                 " disable modeline parsing (vulnerability)
 set nocompatible                " Use Vim defaults
 set noerrorbells                " No error bells please
 set number                      " display the line numbers
