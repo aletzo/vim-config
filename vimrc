@@ -1,4 +1,32 @@
 "colorscheme desert
+filetype off                    " determines the type of the current file
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mattn/emmet-vim'
+Plugin 'godlygeek/tabular'
+Plugin 'powerline/powerline'
+Plugin 'kokx/exuberant-ctags'
+
+
+
+
+
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+
 colorscheme solarized
 
 if ! has('gui_running')
@@ -10,14 +38,6 @@ set guifont=Monaco\ for\ Powerline:h11
 let Powerline_symbols = 'fancy'
 
 
-
-" treat the *.php files also as html files (useful for snipMate but destroys taglist)
-"au BufRead *.php set ft=php.html
-"au BufNewFile *.php set ft=php.html
-
-
-filetype on                     " determines the type of the current file
-filetype plugin on              " use the file type plugins
 
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags' " tell taglist where to find ctags
 let Tlist_Show_One_File = 1                " Only show tags for current buffer
