@@ -1,3 +1,5 @@
+Installation
+============
 Execute the following commands to install on your machine:
 cd ~
 mkdir tmp
@@ -5,11 +7,13 @@ git clone http://github.com/aletzo/vim-config.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
 cd ~/.vim
-git submodule init
 
-=================
-=================
+Find and install a custom font:
+Monaco_Linux-Powerline.ttf
 
+
+CTAGS Installation
+==================
 To install the exuberant ctags (required for the taglist and the tagbar plugins) in OS X:
 1. download the compressed file (or the latest version): http://sourceforge.net/projects/ctags/files/ctags/5.8/ctags-5.8.tar.gz/download
 2. tar xzvf ctags-5.8.tar.gz
@@ -72,11 +76,4 @@ How to keep the ctags up-to-date (from http://tbaggery.com/2011/08/08/effortless
 7. Use `git init` in existing repositories to copy these hooks in.
 
 The tags file is located at PROJECT_ROOT/.git/tags
-
-=================
-=================
-
-Find and install a custom font:
-Monaco_Linux-Powerline.ttf
-
 
