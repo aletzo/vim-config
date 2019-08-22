@@ -1,6 +1,33 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+function PhpCheck()
+  let syntaxCheck = system("php -l " . bufname("%"))
+
+  if syntaxCheck !~ "No syntax error"
+    echom syntaxCheck
+
+    return
+  endif
+
+  let phpStanCheck = system("~/.composer/vendor/bin/phpstan analyze " . bufname("%") . " -n --no-progress")
+
+  let phpStanCheckOneLiner = substitute(phpStanCheck, '\n', '', 'g')
+
+  if phpStanCheckOneLiner !~ "No errors"
+    echom phpStanCheck
+
+    return
+  endif
+
+  "let csFixerCheck = system("php-cs-fixer fix " . bufname("%") . " --dry-run")
+endfunction
+
+
+"autocmd!	" Remove ALL autocommands for the current group.
+
+autocmd BufWritePost *.php call PhpCheck()
+
 
 
 "colorscheme desert
