@@ -24,7 +24,15 @@ function PhpCheck()
     return
   endif
 
-  "let csFixerCheck = system("php-cs-fixer fix " . bufname("%") . " --dry-run")
+  let csFixerCheckList = systemlist("php-cs-fixer fix " . bufname("%") . " --dry-run --diff")
+
+  if len(csFixerCheckList) > 2
+    for line in csFixerCheckList
+        if line[0] == "+" || line[0] == '-'
+          echom line
+        endif
+    endfor
+  endif
 endfunction
 
 
