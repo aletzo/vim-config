@@ -10,12 +10,16 @@ function PhpCheck()
     return
   endif
 
-  let phpStanCheck = system("~/.composer/vendor/bin/phpstan analyze " . bufname("%") . " -n --no-progress")
+  let phpStanCheckList = systemlist("~/.composer/vendor/bin/phpstan analyze " .  bufname("%") . " --level 1 -n --no-progress")
 
-  let phpStanCheckOneLiner = substitute(phpStanCheck, '\n', '', 'g')
+  if phpStanCheckList[1] !~ "No errors"
+    echom "Line"
 
-  if phpStanCheckOneLiner !~ "No errors"
-    echom phpStanCheck
+    for line in phpStanCheckList
+        if line !~ "----" && line !~ "Line"
+            echom line
+        endif
+    endfor
 
     return
   endif
