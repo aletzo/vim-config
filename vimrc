@@ -10,7 +10,7 @@ function PhpCheck()
     return
   endif
 
-  let phpStanCheckList = systemlist("~/.composer/vendor/bin/phpstan analyze " .  bufname("%") . " --level 1 -n --no-progress")
+  let phpStanCheckList = systemlist("~/.composer/vendor/bin/phpstan analyze " .  bufname("%") . " --level 3 -n --no-progress")
 
   if phpStanCheckList[1] !~ "No errors"
     echom "Line"
