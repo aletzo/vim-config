@@ -1,6 +1,43 @@
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
+function JsCheck()
+  let skipRules = ["indent", "quotes", "no-undef", "camelcase", "comma-dangle", "key-spacing", "new-cap", "no-array-constructor", "no-debugger", "no-multi-spaces", "semi"]
+
+  let jsCheckList = systemlist("standard " .  bufname("%") . " -v")
+
+  if len(jsCheckList) == 0
+    return
+  endif
+
+  echom "Errors: "
+
+  for line in jsCheckList
+    if line[0:7] == 'standard'
+        continue
+    endif
+
+    let lineParts = split(line, ":")
+    let length    = len(lineParts)
+
+    let errorMessage = lineParts[length - 1]
+
+    let skipLine = 0
+
+    for rule in skipRules
+      if errorMessage =~ "(" . rule . ")"
+        let skipLine = 1
+      endif
+    endfor
+
+    if skipLine == 1
+      continue
+    endif
+
+    echom "Line " . lineParts[1] . ": " . errorMessage
+  endfor
+endfunction
+
 function PhpCheck()
   let syntaxCheck = system("php -l " . bufname("%"))
 
@@ -38,6 +75,7 @@ endfunction
 
 "autocmd!	" Remove ALL autocommands for the current group.
 
+autocmd BufWritePost *.js call JsCheck()
 autocmd BufWritePost *.php call PhpCheck()
 
 
