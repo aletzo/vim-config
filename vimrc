@@ -2,6 +2,8 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 
 function JsCheck()
+  call TrimTrailingWhitespace()
+
   let skipRules = ["indent", "quotes", "no-undef", "camelcase", "comma-dangle", "key-spacing", "new-cap", "no-array-constructor", "no-debugger", "no-multi-spaces", "semi"]
 
   let jsCheckList = systemlist("standard " .  bufname("%") . " -v")
@@ -39,6 +41,8 @@ function JsCheck()
 endfunction
 
 function PhpCheck()
+  call TrimTrailingWhitespace()
+
   let syntaxCheck = system("php -l " . bufname("%"))
 
   if syntaxCheck !~ "No syntax error"
@@ -47,29 +51,35 @@ function PhpCheck()
     return
   endif
 
-  let phpStanCheckList = systemlist("~/.composer/vendor/bin/phpstan analyze " .  bufname("%") . " --level 3 -n --no-progress")
+  "let phpStanCheckList = systemlist("~/.composer/vendor/bin/phpstan analyze " .  bufname("%") . " --level 2 -n --no-progress")
 
-  if phpStanCheckList[1] !~ "No errors"
-    echom "Line"
+  "if phpStanCheckList[1] !~ "No errors"
+  "  echom "Line"
 
-    for line in phpStanCheckList
-        if line !~ "----" && line !~ "Line"
-            echom line
-        endif
-    endfor
+  "  for line in phpStanCheckList
+  "      if line !~ "----" && line !~ "Line"
+  "          echom line
+  "      endif
+  "  endfor
 
-    return
-  endif
+  "  return
+  "endif
 
-  let csFixerCheckList = systemlist("php-cs-fixer fix " . bufname("%") . " --dry-run --diff")
+  "let csFixerCheckList = systemlist("php-cs-fixer fix " . bufname("%") . " --dry-run --diff")
 
-  if len(csFixerCheckList) > 2
-    for line in csFixerCheckList
-        if line[0] == "+" || line[0] == '-'
-          echom line
-        endif
-    endfor
-  endif
+  "if len(csFixerCheckList) > 2
+  "  for line in csFixerCheckList
+  "      if line[0] == "+" || line[0] == '-'
+  "        echom line
+  "      endif
+  "  endfor
+  "endif
+endfunction
+
+function TrimTrailingWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
 endfunction
 
 
@@ -77,6 +87,10 @@ endfunction
 
 autocmd BufWritePost *.js call JsCheck()
 autocmd BufWritePost *.php call PhpCheck()
+
+autocmd BufWritePost *.css call TrimTrailingWhitespace()
+autocmd BufWritePost *.html call TrimTrailingWhitespace()
+autocmd BufWritePost *.sql call TrimTrailingWhitespace()
 
 
 
@@ -105,8 +119,8 @@ let Tlist_Ctags_Cmd='/usr/local/bin/ctags' " tell taglist where to find ctags
 let Tlist_Show_One_File = 1                " Only show tags for current buffer
 
 
-" PHP syntax checking  
-map <D-F12> :!php -l %<CR>      
+" PHP syntax checking
+map <D-F12> :!php -l %<CR>
 
 " toggle the NERDTree
 map <D-F2> :NERDTreeToggle<CR>
@@ -125,7 +139,7 @@ map <D-F4> :TlistToggle<CR>
 
 
 " source current file (e.g. to load new vimrc configuration)
-map <C-S> :so %<CR> 
+map <C-S> :so %<CR>
 
 "inoremap 4 $
 "inoremap $ 4
@@ -209,7 +223,7 @@ nmap <leader>l :set list!<CR>
 
 set listchars=tab:▸\ ,eol:¬,space:.
 
-"Invisible character colors 
+"Invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
 highlight Space guifg=#4a4a59
@@ -278,6 +292,6 @@ augroup autosourcing
 	autocmd BufWritePost .vimrc source %
 augroup END
 
-" tell ctrl-p to ignore some directories 
+" tell ctrl-p to ignore some directories
 let g:ctrlp_custom_ignore = '\v[\/](build|cache|dist|node_modules|target|vendor)|(\.(git|ico|idea|svn|swp))$'
 
