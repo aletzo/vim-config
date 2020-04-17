@@ -15,8 +15,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'mattn/emmet-vim'
 Plugin 'godlygeek/tabular'
-Plugin 'powerline/powerline'
 Plugin 'kokx/exuberant-ctags'
+Plugin 'vim-airline/vim-airline'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
 
 
 
@@ -34,13 +37,24 @@ if ! has('gui_running')
   let g:solarized_termcolors=256
 endif
 
-set guifont=Monaco\ for\ Powerline:h11
-let Powerline_symbols = 'fancy'
-
 
 
 let Tlist_Ctags_Cmd='/usr/local/bin/ctags' " tell taglist where to find ctags
 let Tlist_Show_One_File = 1                " Only show tags for current buffer
+
+
+function PhpCheck()
+  let syntaxCheck = system("php -l " . bufname("%"))
+
+  if syntaxCheck !~ "No syntax error"
+    echom syntaxCheck
+
+    return
+  endif
+endfunction
+
+autocmd BufWritePost *.php call PhpCheck()
+
 
 
 " PHP syntax checking  
@@ -204,4 +218,39 @@ augroup END
 
 " tell ctrl-p to ignore some directories 
 let g:ctrlp_custom_ignore = '\v[\/](build|cache|dist|node_modules|target|vendor)|(\.(git|ico|idea|svn|swp))$'
+
+
+set guifont=Monaco\ for\ Powerline:h14
+
+let g:airline_powerline_fonts = 1
+let g:Powerline_symbols='unicode'
+
+
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
 
