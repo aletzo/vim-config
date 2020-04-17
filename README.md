@@ -6,6 +6,7 @@ Execute the following commands to install on your machine:
     git clone http://github.com/aletzo/vim-config.git ~/.vim
     ln -s ~/.vim/vimrc ~/.vimrc
     ln -s ~/.vim/gvimrc ~/.gvimrc
+    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 Open vim and execute:
 
