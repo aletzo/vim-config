@@ -82,3 +82,19 @@ How to keep the ctags up-to-date (from http://tbaggery.com/2011/08/08/effortless
 
 The tags file is located at PROJECT_ROOT/.git/tags
 
+
+Sync IdeaVim with the global vim config
+=======================================
+
+    touch ~/.ideavim
+    echo "source ~/.vimrc" >> ~/.ideavim
+
+
+Configure the agnoster prompt to display only the user name
+===========================================================
+
+    prompt_context() {
+        if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
+            prompt_segment black default "$USER"
+        fi 
+    }
